@@ -312,6 +312,46 @@ console.log(climbing(4))
 
 big (o) = O(n)
 
+3 -- towe of honoi 
+
+function towerOfHonoi(n,from,using,to){
+  if(n==1){
+    console.log(`tranfer ${n} from ${from} to ${to}`)
+    return ;
+  }
+  towerOfHonoi(n-1,from,to,using)
+  console.log(`transfer ${n} from ${from} to ${to}`)
+  towerOfHonoi(n-1,using,from,to)
+}
+
+towerOfHonoi(5,'A','B','C')
+
+
+----- exercices : 
+
+1 -- : Trouver le Plus Grand Commun Diviseur PGCD en utilisant l'algorithme d'Euclide 
+
+function findGCD(a,b){
+  if(b==0){
+    return a
+  }
+  return findGCD(b,a%b)
+}
+console.log(findGCD(12,8))
+
+function findGCDwithWhile(a,b){
+  while(b>0){
+    x = a ;
+    a = b ;
+    b = x % b ;
+  }
+  return a ;
+}
+
+console.log(findGCDwithWhile(12,8))
+
+
+
 
 
 
