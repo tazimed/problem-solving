@@ -387,6 +387,24 @@ function combination(arr,k){
 
 console.log(combination([1,2,3,4],2))
 
+-- 4  finding the long substr of strings
+
+function FindSubstr(arr) {
+  let result = "";
+  for (let i = 0; i < arr[0].length; i++) {
+    for (let j = 1; j < arr.length; j++) {
+      if (i>=arr[j].length || arr[0][i] !== arr[j][i]) {
+        return result ;
+      }
+    }
+    result+=arr[0][i]
+  }
+  return result ;
+}
+
+console.log(FindSubstr(['manger','mang','mangue']))
+
+
 
 
 
