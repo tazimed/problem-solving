@@ -351,9 +351,41 @@ function findGCDwithWhile(a,b){
 console.log(findGCDwithWhile(12,8))
 
 
+2 -- finding permutation : 
 
+function permutation(arr){
+  let result = [] ;
+  let total 
+  if(arr.length<=1) return [arr]
+  for(let i = 0 ; i<arr.length ; i++){
+    let rest = arr.slice(0,i).concat(arr.slice(i+1));
+    let perm = permutation(rest);
+    for(let p of perm ){
+      result.push([arr[i],...p])
+    }
+      
+  }
+return result;
+}
+console.log(permutation([1,2,3,4,5,6,7,8,9]))
+console.log(permutation([1,2,3,4,5,6,7,8,9]).length)
 
+3 --  finding combination 
 
+function combination(arr,k){
+  if(k===0) return [[]] ;
+  if(arr.length<k) return [] ;
+  let result = [] ;
+  for(let i = 0 ;i<=arr.length - k ;i++){
+    let comb = combination(arr.slice(i+1),k-1)
+    for(let c of comb){
+      result.push([arr[i],...c])
+    }
+  }
+  return result ;
+}
+
+console.log(combination([1,2,3,4],2))
 
 
 

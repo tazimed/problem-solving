@@ -351,6 +351,27 @@ function findGCDwithWhile(a,b){
 console.log(findGCDwithWhile(12,8))
 
 
+3 --  finding combination 
+
+function combination(arr,k){
+  if(k===0) return [[]] ;
+  if(arr.length<k) return [] ;
+  let result = [] ;
+  for(let i = 0 ;i<=arr.length - k ;i++){
+    let comb = combination(arr.slice(i+1),k-1)
+    for(let c of comb){
+      result.push([arr[i],...c])
+    }
+  }
+  return result ;
+}
+
+console.log(combination([1,2,3,4],2))
+
+
+
+
+
 
 
 
